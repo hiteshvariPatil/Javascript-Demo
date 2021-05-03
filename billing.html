@@ -27,7 +27,10 @@
         <main id="main" >
 
             <div class="addBtnDiv">
-                <button type="button" class="addBtn" onClick="addBill(this)">Add</button> 
+                <button type="button" class="addBtn" onClick="addBill()">Add</button> 
+             </div>
+             <div class="addBtnDiv">
+                <button type="button"  class="addBtn" onclick="calculateTotal()">Calculate Total</button>
              </div>
             <!-- <section id="categories">
                     <div class="card bg-light text-dark" id="duplicater"> 
@@ -88,10 +91,10 @@
                     <caption>Billing Details</caption>
                     <tr>
                         <th>Select Product </th>
-                        <th>Actual Price  </th>
-                        <th>Discount</th>
-                        <th>Discounted Price </th>
-                        <th>Delivery Charges </th>
+                        <th>Actual Price (₹) </th>
+                        <th>Discount (%)</th>
+                        <th>Discounted Price (₹) </th>
+                        <th>Delivery Charges (₹) </th>
                     </tr>
                     <tr id="rowToClone">
                         <td class="selectionTD">
@@ -99,31 +102,37 @@
                             <selct id="match-list"></select> -->
     
                                 <input  list="match-list" id="search"
-                                        name="serach" autocomplete="on" oninput="searchProduct(search.value)">
+                                        name="serach" autocomplete="on" oninput="searchProduct(this,search.value)">
 
                                 <datalist id="match-list" name ="dataList">
                                 </datalist> 
 
-                                <input list="match-list1"  name="serach" autocomplete="on">
+                                <!-- <input list="match-list1"  name="serach" autocomplete="on">
                                 <datalist id="match-list1" name ="dataList">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
-                                </datalist>     
+                                </datalist>      -->
                                 
                         </td>
-                        <td> <p id="actual-price"></p></td>
-                        <td> <p id="product-discount"></p></td>
-                        <td> <p id="product-price"></p></td>
-                        <td> <p id="delivery-charges"></p></td>
+                        <td> <p id="actual-price" class="actualPrice"></p></td>
+                        <td> <p id="product-discount" class="discountRate"></p></td>
+                        <td> <p id="product-price" class="productPrice"></p></td>
+                        <td> <p id="delivery-charges" class="deliveryCharges"></p></td>
                     </tr>
                   </table>
-
+                  <br/>
                   
-
-                  <!-- <div id="container" style="display: block; position: absolute;">
-                      <h4>container</h4>
-                  </div> -->
+                  <table class="totalTbl" id="totalTable">
+                    <tr>
+                        <th style="width: 25%;" >Total : </th>
+                        <td style="width:17%" id="actualPriceTotal"></td>
+                        <td style="width: 15%;" id="discountTotal"></td>
+                        <td style="width: 21%;" id="productTotal"></td>
+                        <td id="deliveryChargesTotal">100</td>
+                    </tr>
+                    
+                  </table>
 
             </section>
 
