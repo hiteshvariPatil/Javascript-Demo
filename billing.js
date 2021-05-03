@@ -90,6 +90,7 @@ function handleDetail(ele,data) {
         productPrice.innerHTML =  data[0].price;
         deliveryCharges.innerHTML = + 0;
         // total.innerHTML = '₹' + data[0].price;
+        calculateTotal()
     }
     else{
         console.log("Not match")
@@ -112,7 +113,7 @@ function handleDetail(ele,data) {
                 productDiscount1.innerHTML =  data[0].discount + '%';
                 productPrice1.innerHTML = data[0].price;
                 deliveryCharges1.innerHTML =  0;
-    
+                calculateTotal();
             }
            
         }
@@ -121,13 +122,13 @@ function handleDetail(ele,data) {
 }
 
 const calculateTotal = () => {    
-    var totalTable = document.getElementById("totalTable");
-    if (totalTable.style.display === "none") {
-        totalTable.style.display = "inline-table";
-      } 
-      else {
-        totalTable.style.display = "none";
-      }
+    // var totalTable = document.getElementById("totalTable");
+    // if (totalTable.style.display === "none") {
+    //     totalTable.style.display = "inline-table";
+    //   } 
+    //   else {
+    //     totalTable.style.display = "none";
+    //   }
 
     var totalPrice = 0;
     var totalDicount = 0;
@@ -166,10 +167,8 @@ const addBill = () => {
     clone.getElementsByTagName("td")[0].getElementsByTagName("input")[0].value = "";
 
     clone.innerHTML = `<td class="selectionTD">
-
         <input  list="match-list${billRowCount}" id="search${billRowCount}"
                 name="serach${billRowCount}" autocomplete="on" oninput="searchProduct(this, search${billRowCount}.value)">
-
         <datalist id="match-list${billRowCount}" name="dataList">
         </datalist> 
         </td>

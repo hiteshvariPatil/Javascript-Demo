@@ -10,7 +10,7 @@ body{
     display: flex;
     position: fixed;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     background:rgb(128, 180, 248);
@@ -105,6 +105,38 @@ th, td {
 
   .totalTbl{
       width: 100%;
-      display: none;
   }
-  
+  .totalTiltle{
+    width: 24.7%;
+    }
+    #actualPriceTotal{
+        width: 17%;
+    }
+    #discountTotal{
+        width: 14.7%;
+    }
+    #productTotal{
+        width: 21.7%;
+    }
+
+  @media only screen and (max-width : 500px){
+    #categories{
+        margin: 0.5rem 0;
+        /* display: flex; */
+        padding: 0.5rem 0.3rem;
+        background: rgba(253, 253, 253, 0.924);
+        width: fit-content;
+    }
+    .totalTiltle{
+        width: 37.7%;
+    }
+    #actualPriceTotal{
+        width: 12.5%;
+    }
+    #discountTotal{
+        width: 15.8%;
+    }
+    #productTotal{
+        width: 19.4%;
+    }
+  }

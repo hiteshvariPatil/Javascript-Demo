@@ -29,64 +29,12 @@
             <div class="addBtnDiv">
                 <button type="button" class="addBtn" onClick="addBill()">Add</button> 
              </div>
-             <div class="addBtnDiv">
+             <!-- <div class="addBtnDiv">
                 <button type="button"  class="addBtn" onclick="calculateTotal()">Calculate Total</button>
-             </div>
-            <!-- <section id="categories">
-                    <div class="card bg-light text-dark" id="duplicater"> 
-                        <div class="card-body custom">Select Product :
-                            <select id="DLState" onChange="selectionChange()">
-                            </select>
-                            <p id="actual-price">Actual Price : </p>
-                            <p id="product-discount">Discount : </p>
-                            <p id="product-price">Price : </p>
-                            <p id="delivery-charges">Delivery Charges : </p>
-                            <p id="total">Total : </p>
-                        </div>
-                    </div>
-            </section> -->
-            <!-- <div id="duplicater" onClick="duplicate()">Duplicate Items</div> -->
-
+             </div> -->
+           
             <section id="categories">
-                <!-- <table id="bill-table" name="table">
-                    <tr>
-                        <th>Select Product </th>
-                        <th>Actual Price  </th>
-                        <th>Discount </th>
-                        <th>Discounted Price </th>
-                        <th>Delivery Charges </th>
-                        
-                    </tr>
-
-                    <tr>
-                      <td id="selectionTD">
-                      
-
-                            <input list="match-list" id="search" name="serach" autocomplete="on">
-                            <datalist id="match-list" name ="dataList">
-                            </datalist> 
-
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                    </td>
-                      <td> <p id="product-discount"></p></td>
-                      <td> <p id="product-price"></p></td>
-                      <td> <p id="delivery-charges"></p></td>
-                    </tr>
-
-                     <tr>
-                        <th>Total </th>
-                       <td> <p id="total"></p></td>
-                     </tr>
-
-
-                  
-                  </table> -->
-
-
+                
                   <table style="width:100%" id="product-table">
                     <caption>Billing Details</caption>
                     <tr>
@@ -98,38 +46,36 @@
                     </tr>
                     <tr id="rowToClone">
                         <td class="selectionTD">
-                            <!-- <input type="text" id="search" placeholder="Enter product name" />
-                            <selct id="match-list"></select> -->
     
                                 <input  list="match-list" id="search"
                                         name="serach" autocomplete="on" oninput="searchProduct(this,search.value)">
 
                                 <datalist id="match-list" name ="dataList">
-                                </datalist> 
-
-                                <!-- <input list="match-list1"  name="serach" autocomplete="on">
-                                <datalist id="match-list1" name ="dataList">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </datalist>      -->
-                                
+                                </datalist>  
                         </td>
+
                         <td> <p id="actual-price" class="actualPrice"></p></td>
                         <td> <p id="product-discount" class="discountRate"></p></td>
                         <td> <p id="product-price" class="productPrice"></p></td>
                         <td> <p id="delivery-charges" class="deliveryCharges"></p></td>
                     </tr>
+
+                    <!-- <tr>
+                        <th  >Total : </th>
+                        <td  id="actualPriceTotal"></td>
+                        <td  id="discountTotal"></td>
+                        <td  id="productTotal"></td>
+                        <td id="deliveryChargesTotal"></td>
+                    </tr> -->
                   </table>
-                  <br/>
                   
                   <table class="totalTbl" id="totalTable">
                     <tr>
-                        <th style="width: 25%;" >Total : </th>
-                        <td style="width:17%" id="actualPriceTotal"></td>
-                        <td style="width: 15%;" id="discountTotal"></td>
-                        <td style="width: 21%;" id="productTotal"></td>
-                        <td id="deliveryChargesTotal">100</td>
+                        <th class="totalTiltle" >Total : </th>
+                        <td id="actualPriceTotal"></td>
+                        <td id="discountTotal"></td>
+                        <td id="productTotal"></td>
+                        <td id="deliveryChargesTotal"></td>
                     </tr>
                     
                   </table>
