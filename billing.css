@@ -62,7 +62,7 @@ body{
 
 .addBtnDiv{
     text-align: end;
-    display: contents;
+    /* display: contents; */
 }
 .addBtn{
     background: rgb(126, 202, 228);
