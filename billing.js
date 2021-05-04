@@ -17,6 +17,8 @@ if (search) {
 
 const searchProduct = async (ele, searchText) => {
 
+    allproduct1();
+
     console.log("searchText", searchText)
     console.log("ele", ele)
 
@@ -144,12 +146,14 @@ const calculateTotal = () => {
         console.log("actPrice[i].value",actPrice[i].innerHTML)
         totalPrice = parseInt(actPrice[i].innerHTML) + parseInt(totalPrice);
         totalDicount = parseInt(discountRate[i].innerHTML) + parseInt(totalDicount);
-        totalProductPrice = parseInt(productPrice[i].innerHTML) + parseInt(totalProductPrice);
+        var numVal1 = Number(totalPrice);
+        var numVal2 = Number(totalDicount) / 100;
+        totalProductPrice = numVal1 - (numVal1 * numVal2)
         totalDeliveryRate = parseInt(deliveryChargeRate[i].innerHTML) + parseInt(totalDeliveryRate);
     }
     console.log("Total = "+totalPrice);
     document.getElementById("actualPriceTotal").innerHTML = totalPrice;
-    document.getElementById("discountTotal").innerHTML = totalDicount;
+    document.getElementById("discountTotal").innerHTML = totalDicount + '%';
     document.getElementById("productTotal").innerHTML = totalProductPrice;
     document.getElementById("deliveryChargesTotal").innerHTML = totalDeliveryRate;
 }
