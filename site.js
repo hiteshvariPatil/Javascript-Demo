@@ -84,7 +84,7 @@ const data= [
 
 
 var i;
-var detail =document.getElementsByClassName('card-item');
+var detail = document.getElementsByClassName('card-item');
 var cardImg = document.getElementById("card-img")
 var detailsImg = document.getElementById('details-img')
 var detailTitle = document.getElementById('detail-title')

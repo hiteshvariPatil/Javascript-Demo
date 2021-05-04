@@ -15,11 +15,10 @@ if (search) {
     // search.addEventListener('mouseover',() => allProduct())
 }
 
-const searchProduct = async (ele, searchText,ele1) => {
+const searchProduct = async (ele, searchText) => {
 
     console.log("searchText", searchText)
     console.log("ele", ele)
-    console.log("in search ele1", ele1);
 
     const res = await fetch('./data.json');
     const products = await res.json();
