@@ -17,8 +17,6 @@ if (search) {
 
 const searchProduct = async (ele, searchText) => {
 
-    allproduct1();
-
     console.log("searchText", searchText)
     console.log("ele", ele)
 
@@ -123,14 +121,7 @@ function handleDetail(ele,data) {
 }
 
 const calculateTotal = () => {    
-    // var totalTable = document.getElementById("totalTable");
-    // if (totalTable.style.display === "none") {
-    //     totalTable.style.display = "inline-table";
-    //   } 
-    //   else {
-    //     totalTable.style.display = "none";
-    //   }
-
+    
     var totalPrice = 0;
     var totalDicount = 0;
     var totalProductPrice = 0;
