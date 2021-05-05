@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
         <title>MobileKart</title>
 
-        <link rel="stylesheet" href="/billing.css">
+        <link rel="stylesheet" href="./billing.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
         <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.0/Rx.js"></script>
@@ -17,22 +17,19 @@
                 <!-- <img src="/images/phone-icon3.png" alt="image" class="logo" id="logo"> -->
                 <a href="./site.html" class="logo" id="logo"><i class="fa fa-home"></i></a>
                 <div class="access">
-                    <a href="#" id="notification"><i class="fa fa-bell"></i></a>
-                    <a href="#" id="cart"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="#" id="notification" class="navItems"><i class="fa fa-bell"></i></a>
+                    <a href="#" id="cart" class="navItems"><i class="fa fa-shopping-cart"></i></a>
                     <a href="#" id="bars"><i class="fa fa-bars"></i></a>
-                    <a href="#" id="account"><i class="fa fa-user-circle-o"></i></a>
+                    <a href="#" id="account" class="navAccount"><i class="fa fa-user-circle-o"></i></a>
                 </div>
             </div>
         </nav>
 
-        <main id="main" >
+        <main id="main"  class="mainSection">
 
             <div class="addBtnDiv">
                 <button type="button" class="addBtn" onClick="addBill()">Add</button> 
              </div>
-             <!-- <div class="addBtnDiv">
-                <button type="button"  class="addBtn" onclick="calculateTotal()">Calculate Total</button>
-             </div> -->
            
             <section id="categories">
                 
@@ -61,16 +58,16 @@
                         <td> <p id="delivery-charges" class="deliveryCharges"></p></td>
                     </tr>
 
-                    <!-- <tr>
+                    <tr>
                         <th  >Total : </th>
                         <td  id="actualPriceTotal"></td>
                         <td  id="discountTotal"></td>
                         <td  id="productTotal"></td>
                         <td id="deliveryChargesTotal"></td>
-                    </tr> -->
+                    </tr>
                   </table>
                   
-                  <table class="totalTbl" id="totalTable">
+                  <!-- <table class="totalTbl" id="totalTable">
                     <tr>
                         <th class="totalTiltle" >Total : </th>
                         <td id="actualPriceTotal"></td>
@@ -79,7 +76,7 @@
                         <td id="deliveryChargesTotal"></td>
                     </tr>
                     
-                  </table>
+                  </table> -->
 
             </section>
 

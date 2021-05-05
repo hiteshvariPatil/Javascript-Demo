@@ -28,7 +28,7 @@ body{
     margin: 0 auto;
     position: relative;
 }
-#searchInput{
+.searchbox{
     margin: 0 auto;
     width: 50vw;
     outline: none;
@@ -49,38 +49,31 @@ body{
 .access a{
     color: rgb(73, 73, 70);
     font-size: 20px;
-    padding:0 10px;
+    padding:0 0.625rem;
 }
 
-#billing{
+.navItems{
     position: relative;
     top: -5px;
 }
-#notification{
-    position: relative;
-    top: -5px;
-}
-#cart{
-    position: relative;
-    top: -5px;
-}
-#bars{
+
+.navBars{
     padding:0 10px;
     font-size: 30px;
     margin-right: 1rem;
 }
-#account{
+.navAccount{
     display: none;
     margin-right: 1rem;
 }
-#account i{
+.navAccount i{
     font-size: 30px;
 }
 
 
 
 /* main section */
-#main{
+.mainSection{
     margin-top: 5rem;
 }
 #categories{
@@ -111,7 +104,7 @@ body{
     margin: auto;
     text-align: center;
 }
-#brand-name{
+.brandName{
     font-family: sans-serif;
     text-transform: capitalize;
     margin-top: 10px;
@@ -126,7 +119,7 @@ body{
     background: white;
     padding: 1rem 0.5rem;
 }
-#item-btn{
+.itemBtn{
     outline: none;
     border: none;
     background: rgb(126, 202, 228);
@@ -135,10 +128,10 @@ body{
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }
-#item-btn:active{
+.itemBtn:active{
     background: rgb(4, 167, 243);
 }
-#title{
+.itemTitle{
     font-size: 2rem;
     background: white;
 }
@@ -161,20 +154,20 @@ body{
     background: lavender;
     transition: all 0.7s ease-in-out;
 }
-.item-container:hover #card-img{
+.item-container:hover .cardImg{
     transform: scale(1.1);
     transition: all 0.7s ease-in-out;
 }
 .card-item{
     cursor: pointer;
 }
-#card-img{
+.cardImg{
     position: relative;
     max-width: 100%;
     max-height: 8rem;
     text-align: center;
 }
-#item-name{
+.itemName{
     text-align: left;
     color: lightseagreen;
     margin-top: 1rem;
@@ -194,65 +187,12 @@ body{
     transition: all 0.7s ease-in-out;
     opacity: 1;
 }
-#item-price{
+.itemPrice{
     color: rgb(199, 110, 110);
     text-align: left;
     margin-top: 0.5rem;
 }
 
-/* footer */
-footer{
-    background: rgb(18, 29, 29);
-    color: white;
-    font-family: sans-serif;
-    margin-top: 1rem;
-}
-#footer-title{
-    font-size: 2rem;
-    text-transform: capitalize;
-    text-align: center;
-    padding: 0.3rem 0;
-    color: grey;
-
-}
-.footer{
-    display: grid;
-    padding: 5rem 2rem;
-    grid-template-columns: auto auto;
-    grid-gap: 2rem;
-    font-size: 0.9rem;
-}
-.footer  h3{
-    margin-bottom: 1rem;
-    font-weight: 200;
-    font-size: 1.2rem;
-    color: grey;
-}
-.footer ul li{
-    list-style-type: none;
-    line-height: 1.5rem;
-}
-.footer ul li a{
-    color: white;
-    text-decoration: none;
-
-}
-.footer p{
-    line-height: 1.5rem;
-}
-
-#copyright{
-    margin-top: 3rem;
-    text-align: center;
-    background: rgb(39, 38, 38);
-    padding: 0.7rem 0;
-    font-size: 1.2rem;
-}
-
-.footer .social-media i{
-    padding: 0.5rem;
-    font-size: 1.5rem;
-}
 
 
 /* Details page */
@@ -332,31 +272,31 @@ footer{
 }
 
 
-#detail-title{
+.detailTitle{
     margin-top: 2rem;
     color: teal;
     /* font-size: 2.5rem; */
 }
-#detail-price{
+.detailPrice{
     margin-top: 1.5rem;
     color: rgb(199, 110, 110);
     /* font-size: 1.5rem; */
 }
-#detail-discount {
+.detailDiscount {
     font-size: 16px;
     
     color: rgb(106, 146, 161);
 }
-#you-save{
+.youSaved{
     font-size: 16px;
     
     color: rgb(106, 146, 161);
 }
-#delievery{
+.deliveryDays{
     margin-top: 1.5rem;
     font-size: 1.2rem;
 }
-#spec{
+.specification{
     margin-top: 0.5rem;
     font-size: 1.2rem;
 }
@@ -396,49 +336,6 @@ footer{
 }
 
 
-/* cart list section*/
-#cart-container{
-    display: none;
-    margin-top: 5rem;
-}
-#cart-title{
-    font-size: 3.5rem;
-    text-align: center;
-    font-family: sans-serif;
-    color: rgb(146, 78, 78);
-}
-#empty-cart{
-    display: none;
-    margin-top: 4rem;
-    text-align: center;
-    font-size: larger;
-}
-
-#cart-with-items{
-    display: none;
-    margin-top: 1rem;
-}
-
-.cart-column{
-    display: grid;
-    padding: 1rem;
-    grid-template-columns: repeat(5,1fr);
-}
-.cart-list{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    margin-top: 0.4rem;
-    position: relative;
-    padding:0.5rem 1rem;
-    background: white;
-}
-.list-name,.pay,.quantity,#remove{
-    padding: 1.2rem 0.2rem;
-}
-#list-img{
-    width: 5rem;
-    height: 5rem;
-}
 #total{
     display: none;
     position: relative;
@@ -482,40 +379,14 @@ footer{
     .footer{
         grid-template-columns: auto auto auto;
     }
-    #account{
+    .navAccount{
         display: inline;
     }
-    #bars{
+    .navBars{
         display: none;
     }
 }
 
-/* @media only screen and (max-width : 800px){
-    .items-detail{
-        display: block;
-        width: 70vw;
-        height: 70vh;
-        padding: 0 4.5rem;
-    }
-    #details-img{
-        width: 8rem;
-        height: 9rem;
-    }
-    #detail-title{
-        font-size: 1.7rem;
-        margin-top: 0rem;
-    }
-    #detail-price,#delievery{
-        margin-top: 0.5rem;
-    }
-    #spec,.items-detail  ul{
-        display: none;
-    }
-    .image-container{
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-} */
 
 @media only screen and (max-width: 500px){
     #categories{

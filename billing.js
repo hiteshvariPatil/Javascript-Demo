@@ -2,7 +2,6 @@ const search = document.getElementById("search")
 const matchList = document.getElementById("match-list");
 var billRowCount = 0;
 
-
 var productPrice = document.getElementById('product-price');
 var productDiscount = document.getElementById('product-discount')
 var deliveryCharges = document.getElementById('delivery-charges')
@@ -10,118 +9,89 @@ var actualPrice = document.getElementById('actual-price')
 var total = document.getElementById('total')
 var billTable = document.getElementById('bill-table')
 
-if (search) {
-    //  search.addEventListener('input', () => searchProduct(search.value))
-    // search.addEventListener('mouseover',() => allProduct())
-}
 
 const searchProduct = async (ele, searchText) => {
 
-    console.log("searchText", searchText)
-    console.log("ele", ele)
+    fetch('./data.json').then(data => data.json()).then(products => {
 
-    const res = await fetch('./data.json');
-    const products = await res.json();
-    let matches = products;
+        let matches = products;
 
-    if (searchText) {
-        matches = products.filter(product => {
-            return product.name.toLowerCase().includes(searchText.toLowerCase())
-        })
-    }
+        if (searchText) {
+            matches = products.filter(product => {
+                return product.name.toLowerCase().includes(searchText.toLowerCase())
+            })
+        }
 
+        if (searchText.length == 0) {
+            matches = [];
+            productPrice.innerHTML = "";
+            productDiscount.innerHTML = "";
+            deliveryCharges.innerHTML = "";
+            actualPrice.innerHTML = "";
 
+        }
 
-    if (searchText.length == 0) {
-        console.log("in if")
-        matches = [];
-        productPrice.innerHTML = "";
-        productDiscount.innerHTML = "";
-        deliveryCharges.innerHTML = "";
-        actualPrice.innerHTML = "";
-        //  total.innerHTML = "";
-        //  matchOptions.innerHTML = '';
-    }
+        outputHTML(ele, matches)
 
-    console.log("matches..", matches, searchText.length)
-
-    outputHTML(ele, matches)
-
-    if (matches.length === 1) {
-        handleDetail(ele,matches);
-    }
-
+        if (matches.length === 1) {
+            handleDetail(ele, matches);
+        }
+    })
 }
-
-
 
 const outputHTML = (ele, matches) => {
     if (matches.length > 0) {
         const html = matches.map(match =>
             `<option>${match.name}</option>`
         )
-
             .join('');
 
         if (ele) {
             ele.nextSibling.nextSibling.innerHTML = html;
         }
-
-        // matchList.innerHTML = html;
-
     }
-
 }
 
 
-function handleDetail(ele,data) {
-    console.log("data", data)
+function handleDetail(ele, data) {
 
     var totalPrise = data[0].price + data[0].save
     var row = document.getElementsByTagName("tr");
-    console.log("Row Length...",row.length);
-   
 
-    if(ele.id == "search"){
+    if (ele.id == "search") {
+
         console.log("Exact match")
         actualPrice.innerHTML = totalPrise;
         productDiscount.innerHTML = data[0].discount + '%';
-        productPrice.innerHTML =  data[0].price;
+        productPrice.innerHTML = data[0].price;
         deliveryCharges.innerHTML = + 0;
-        // total.innerHTML = '₹' + data[0].price;
         calculateTotal()
     }
-    else{
+    else {
         console.log("Not match")
 
-        for(i=0 ; i< row.length; i++){
-          
-            var actualPrice1 = document.getElementById("actual-price"+[i]);
-            var productPrice1 = document.getElementById('product-price'+[i]);
-            var productDiscount1 = document.getElementById('product-discount'+[i])
-            var deliveryCharges1 = document.getElementById('delivery-charges'+[i])
-            
-            console.log("price",productDiscount1.id)
-            console.log(i)
-            console.log("ele in handleDetails", ele.id)
+        for (i = 0; i < row.length; i++) {
 
-            console.log("total Count..", data[0].price )
-            if(ele.id.includes(i)){
+            var actualPrice1 = document.getElementById("actual-price" + [i]);
+            var productPrice1 = document.getElementById('product-price' + [i]);
+            var productDiscount1 = document.getElementById('product-discount' + [i])
+            var deliveryCharges1 = document.getElementById('delivery-charges' + [i])
+
+            if (ele.id.includes(i)) {
                 console.log("match")
                 actualPrice1.innerHTML = totalPrise;
-                productDiscount1.innerHTML =  data[0].discount + '%';
+                productDiscount1.innerHTML = data[0].discount + '%';
                 productPrice1.innerHTML = data[0].price;
-                deliveryCharges1.innerHTML =  0;
+                deliveryCharges1.innerHTML = 0;
                 calculateTotal();
             }
-           
         }
     }
-   
+
 }
 
-const calculateTotal = () => {    
-    
+const calculateTotal = () => {
+
     var totalPrice = 0;
     var totalDicount = 0;
     var totalProductPrice = 0;
@@ -132,9 +102,7 @@ const calculateTotal = () => {
     var productPrice = document.getElementsByClassName("productPrice")
     var deliveryChargeRate = document.getElementsByClassName("deliveryCharges");
 
-    console.log("actPrice",actPrice.length);
-    for(var i = 0; i < actPrice.length; i++){
-        console.log("actPrice[i].value",actPrice[i].innerHTML)
+    for (var i = 0; i < actPrice.length; i++) {
         totalPrice = parseInt(actPrice[i].innerHTML) + parseInt(totalPrice);
         totalDicount = parseInt(discountRate[i].innerHTML) + parseInt(totalDicount);
         var numVal1 = Number(totalPrice);
@@ -142,7 +110,7 @@ const calculateTotal = () => {
         totalProductPrice = numVal1 - (numVal1 * numVal2)
         totalDeliveryRate = parseInt(deliveryChargeRate[i].innerHTML) + parseInt(totalDeliveryRate);
     }
-    console.log("Total = "+totalPrice);
+
     document.getElementById("actualPriceTotal").innerHTML = totalPrice;
     document.getElementById("discountTotal").innerHTML = totalDicount + '%';
     document.getElementById("productTotal").innerHTML = totalProductPrice;
@@ -157,6 +125,7 @@ const addBill = () => {
 
     var row = document.getElementById("rowToClone");
     var table = document.getElementById("product-table");
+    let lastChild = table.lastElementChild.lastElementChild;
     var clone = row.cloneNode(true);
     clone.getElementsByTagName("td")[0].getElementsByTagName("input")[0].value = "";
 
@@ -174,10 +143,9 @@ const addBill = () => {
     clone.id = counter++;
     cloneID = clone.id;
 
+    lastChild.before(clone)
 
-    table.appendChild(clone)
-
-    searchProduct(document.getElementById(`search${billRowCount}`,  ''));
+    searchProduct(document.getElementById(`search${billRowCount}`, ''));
 
     billRowCount++;
 

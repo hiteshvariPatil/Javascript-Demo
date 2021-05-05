@@ -27,13 +27,10 @@ body{
 .access a{
     color: rgb(73, 73, 70);
     font-size: 20px;
-    padding:0 10px;
+    padding:0 0.625rem;
 }
-#notification{
-    position: relative;
-    top: -5px;
-}
-#cart{
+
+.navItems{
     position: relative;
     top: -5px;
 }
@@ -42,15 +39,15 @@ body{
     font-size: 30px;
     margin-right: 1rem;
 }
-#account{
+.navAccount{
     display: none;
     margin-right: 1rem;
 }
-#account i{
+.navAccount i{
     font-size: 30px;
 }
 
-#main{
+.mainSection{
     margin-top: 5rem;
 }
 #categories{
