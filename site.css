@@ -58,7 +58,7 @@ body{
 }
 
 .navBars{
-    padding:0 10px;
+    padding:0 0.625rem;
     font-size: 30px;
     margin-right: 1rem;
 }
