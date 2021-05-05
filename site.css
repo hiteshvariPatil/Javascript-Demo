@@ -307,69 +307,33 @@ body{
     list-style-position: inside;
 }
 .items-detail button{
-    font-size: 1.5rem;
+    font-size: 15px;
     padding: 0.3rem;
     text-align: center;
     margin-top: 0.5rem;
     outline: none;
     border: none;
 }
-#carts{
+.addToCart{
     background: rgb(238, 166, 12);
     color: white;
     font-size: 15px;
     cursor: pointer;
 }
-#carts:active{
+.addToCart:active{
     background: white;
     color: rgb(238, 166, 12);
 }
-#buy{
+.buyBtn{
     background: rgb(167, 179, 5);
     color: white;
     font-size: 15px;
     cursor: pointer;
 }
-#buy:active{
+.buyBtn:active{
     background: white;
     color:rgb(167, 179, 5);
 }
-
-
-#total{
-    display: none;
-    position: relative;
-    margin-top: 3rem;
-    right: 1rem;
-    float: right;background: rgb(172, 191, 246);
-    font-family: monospace;
-    font-size: larger;
-    padding: 1rem;
-    color: rgb(149, 51, 34);
-    letter-spacing: 0.1rem;
-    margin-bottom: 1.5rem;
-}
-#you-saved{
-    color: rgb(101, 99, 102);
-}
-
-.billingDiv{
-    width: 67%;
-    text-align: end;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-#billing-btn{
-    background: rgb(126, 202, 228);
-    color: white;
-    border: none;
-    outline: none;
-    padding: 12px;
-    font-size: 1.2rem;
-    cursor: pointer;
-
-}
-
 
 /* media queries for responsive view */
 @media only screen and (min-width : 800px){

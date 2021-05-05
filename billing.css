@@ -100,22 +100,6 @@ th, td {
       outline: none;
   }
 
-  .totalTbl{
-      width: 100%;
-  }
-  .totalTiltle{
-    width: 24.7%;
-    }
-    #actualPriceTotal{
-        width: 17%;
-    }
-    #discountTotal{
-        width: 14.7%;
-    }
-    #productTotal{
-        width: 21.7%;
-    }
-
   @media only screen and (max-width : 500px){
     #categories{
         margin: 0.5rem 0;
@@ -124,16 +108,5 @@ th, td {
         background: rgba(253, 253, 253, 0.924);
         width: fit-content;
     }
-    .totalTiltle{
-        width: 37.7%;
-    }
-    #actualPriceTotal{
-        width: 12.5%;
-    }
-    #discountTotal{
-        width: 15.8%;
-    }
-    #productTotal{
-        width: 19.4%;
-    }
+  
   }
