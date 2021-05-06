@@ -2,7 +2,7 @@
 const data = [
     {
         id: 0,
-        img: '/images/redmiK20.jpg',
+        img: './images/redmiK20.jpg',
         name: 'Redmi K20',
         price: 19000,
         discount: 10,
@@ -12,7 +12,7 @@ const data = [
     },
     {
         id: 1,
-        img: '/images/samGalaxynote20.jpg',
+        img: './images/samGalaxynote20.jpg',
         name: 'Samsung Galaxy Note 20',
         price: 28050,
         discount: 15,
@@ -22,7 +22,7 @@ const data = [
     },
     {
         id: 2,
-        img: '/images/oppofindX2.jpg',
+        img: './images/oppofindX2.jpg',
         name: 'OPPO Find X2',
         price: 24900,
         discount: 17,
@@ -32,7 +32,7 @@ const data = [
     },
     {
         id: 3,
-        img: '/images/realmeX20pro.jpg',
+        img: './images/realmeX20pro.jpg',
         name: 'Realme X50 Pro',
         price: 28500,
         discount: 25,
@@ -42,7 +42,7 @@ const data = [
     },
     {
         id: 4,
-        img: '/images/redminote8.jpg',
+        img: './images/redminote8.jpg',
         name: 'Redmi Note 8',
         price: 18000,
         discount: 12,
@@ -52,7 +52,7 @@ const data = [
     },
     {
         id: 5,
-        img: '/images/redminote9.jpg',
+        img: './images/redminote9.jpg',
         name: 'Redmi Note 9',
         price: 15000,
         discount: 10,
@@ -62,7 +62,7 @@ const data = [
     },
     {
         id: 6,
-        img: '/images/redmi8.jpg',
+        img: './images/redmi8.jpg',
         name: 'Redmi 8A Dual',
         price: 16000,
         discount: 10,
@@ -72,7 +72,7 @@ const data = [
     },
     {
         id: 7,
-        img: '/images/redmi9.jpg',
+        img: './images/redmi9.jpg',
         name: 'Redmi 9',
         price: 10000,
         discount: 10,

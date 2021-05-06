@@ -106,7 +106,10 @@ th, td {
         /* display: flex; */
         padding: 0.5rem 0.3rem;
         background: rgba(253, 253, 253, 0.924);
-        width: fit-content;
+        width: 145%;
+    }
+    .addBtnDiv{
+        width: 145%;
     }
   
   }

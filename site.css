@@ -107,7 +107,7 @@ body{
 .brandName{
     font-family: sans-serif;
     text-transform: capitalize;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     color: teal;
 }
 .categories{
@@ -359,7 +359,21 @@ body{
     .categories{
         width: 175%;
     }
-    
+    .brandName{
+        font-size: 20px;
+    }
+    .brand{
+        width: 5rem;
+    }
+    .itemName, .itemPrice{
+        font-size: 21px;
+    }
+    .detailTitle{
+        font-size: 25px;
+    }
+    .detailPrice, .detailPrice, .detailPrice, .deliveryDays,.specification, .items-detail ul li, .items-detail button{
+        font-size: 22px;
+    }
 }
 
 
